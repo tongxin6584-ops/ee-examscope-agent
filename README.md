@@ -8,7 +8,7 @@
 
 - [Figma 可交互原型](https://www.figma.com/design/74FCEyeKJkl33GOlxIrYe2/Agent?node-id=3-2)
 - [演示视频脚本](docs/demo-script.md)
-- 演示视频：制作中
+- [60–90 秒演示视频（飞书妙记）](https://my.feishu.cn/minutes/obcn4f1j6821q75mlrpki7s5?from=from_copylink)
 - 在线 Demo：按需开放，部署完成后补充
 
 ## 产品定位
@@ -184,6 +184,20 @@ npm run build
 | 注释事件与 `[DONE]` 忽略 | 通过 |
 | 自动化测试合计 | **6/6 通过** |
 | Vite 生产构建 | **通过** |
+
+## 测试截图
+
+### 单校查询
+
+![单校查询](docs/test-results/single-school.png)
+
+### 两校对比
+
+![两校对比](docs/test-results/comparison.png)
+
+### 缺失信息兜底
+
+![缺失信息兜底](docs/test-results/missing-data-fallback.png)
 
 Agent 效果评测尚未用统一测试集重新跑完，因此当前不声明问答准确率、召回率或幻觉率。计划从以下维度建立可复现评测：
 
