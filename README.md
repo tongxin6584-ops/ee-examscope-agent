@@ -7,6 +7,7 @@
 ## 在线材料
 
 - [Figma 可交互原型](https://www.figma.com/design/74FCEyeKJkl33GOlxIrYe2/Agent?node-id=3-2)
+- [演示视频脚本](docs/demo-script.md)
 - 演示视频：制作中
 - 在线 Demo：按需开放，部署完成后补充
 
