@@ -10,6 +10,8 @@
 - [演示视频脚本](docs/demo-script.md)
 - [60–90 秒演示视频（飞书妙记）](https://my.feishu.cn/minutes/obcn4f1j6821q75mlrpki7s5?from=from_copylink)
 - 在线 Demo：按需开放，部署完成后补充
+- Netlify 部署配置：仓库根目录的 `netlify.toml`；前端仍请求 `/api/chat`，由重写规则转发到 Netlify Function。
+- Netlify 版本会先聚合 Dify 的流式响应，答案在生成完成后一次性显示；本地开发和 Vercel 版本保留流式显示。
 
 ## 产品定位
 
