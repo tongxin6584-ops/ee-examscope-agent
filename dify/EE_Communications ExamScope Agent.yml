@@ -1,0 +1,1311 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  icon_type: emoji
+  mode: advanced-chat
+  name: EE/Communications ExamScope Agent
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/tongyi:0.2.23@f500332838ed670d0962a4f727618a2eb7e27a453ea56e72a28731f5f383ab72
+    version: null
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/openai_api_compatible:0.0.68@ba61c5eccb814be7364117c0bec3710a51e09b20f31e37243e747a00f9377969
+    version: null
+kind: app
+version: 0.7.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        attachment_image_file_size_limit: 2
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        file_upload_limit: 50
+        image_file_batch_limit: 10
+        image_file_size_limit: 10
+        knowledge_file_size_limit: 15
+        single_chunk_attachment_limit: 10
+        skill_file_size_limit: 50
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        iteration_id: null
+        loop_id: null
+        sourceType: start
+        targetType: parameter-extractor
+      id: 1792332495058-source-1792332548599-target
+      source: '1792332495058'
+      sourceHandle: source
+      target: '1792332548599'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        iteration_id: null
+        loop_id: null
+        sourceType: parameter-extractor
+        targetType: code
+      id: 1792332548599-source-1792385930069-target
+      source: '1792332548599'
+      sourceHandle: source
+      target: '1792385930069'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        iteration_id: null
+        loop_id: null
+        sourceType: code
+        targetType: if-else
+      id: 1792333507677-source-1792334472042-target
+      source: '1792333507677'
+      sourceHandle: source
+      target: '1792334472042'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        iteration_id: null
+        loop_id: null
+        sourceType: if-else
+        targetType: if-else
+      id: 1792334472042-false-1792334795962-target
+      source: '1792334472042'
+      sourceHandle: 'false'
+      target: '1792334795962'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        iteration_id: null
+        loop_id: null
+        sourceType: if-else
+        targetType: answer
+      id: 1792334472042-true-1792334706674-target
+      source: '1792334472042'
+      sourceHandle: 'true'
+      target: '1792334706674'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        iteration_id: null
+        loop_id: null
+        sourceType: if-else
+        targetType: knowledge-retrieval
+      id: 1792334795962-26fef4fb-d69c-4e29-aa7f-f0515f0b9842-17923379251620-target
+      source: '1792334795962'
+      sourceHandle: 26fef4fb-d69c-4e29-aa7f-f0515f0b9842
+      target: '17923379251620'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        iteration_id: null
+        loop_id: null
+        sourceType: if-else
+        targetType: knowledge-retrieval
+      id: 1792334795962-26fef4fb-d69c-4e29-aa7f-f0515f0b9842-17923379505410-target
+      source: '1792334795962'
+      sourceHandle: 26fef4fb-d69c-4e29-aa7f-f0515f0b9842
+      target: '17923379505410'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        iteration_id: null
+        loop_id: null
+        sourceType: if-else
+        targetType: knowledge-retrieval
+      id: 1792334795962-e69b8ba6-0a9b-4a5b-9577-36ee3908156e-17923386472190-target
+      source: '1792334795962'
+      sourceHandle: e69b8ba6-0a9b-4a5b-9577-36ee3908156e
+      target: '17923386472190'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        iteration_id: null
+        loop_id: null
+        sourceType: if-else
+        targetType: answer
+      id: 1792334795962-false-1792335271064-target
+      source: '1792334795962'
+      sourceHandle: 'false'
+      target: '1792335271064'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        iteration_id: null
+        loop_id: null
+        sourceType: if-else
+        targetType: knowledge-retrieval
+      id: 1792334795962-true-1792335689123-target
+      source: '1792334795962'
+      sourceHandle: 'true'
+      target: '1792335689123'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        iteration_id: null
+        loop_id: null
+        sourceType: knowledge-retrieval
+        targetType: llm
+      id: 1792335689123-source-llm-target
+      source: '1792335689123'
+      sourceHandle: source
+      target: llm
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        iteration_id: null
+        loop_id: null
+        sourceType: knowledge-retrieval
+        targetType: code
+      id: 17923379251620-source-1792402924590-target
+      source: '17923379251620'
+      sourceHandle: source
+      target: '1792402924590'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        iteration_id: null
+        loop_id: null
+        sourceType: knowledge-retrieval
+        targetType: code
+      id: 17923379505410-source-1792402924590-target
+      source: '17923379505410'
+      sourceHandle: source
+      target: '1792402924590'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        iteration_id: null
+        loop_id: null
+        sourceType: llm
+        targetType: answer
+      id: 1792337983383--1792338154909-target
+      source: '1792337983383'
+      sourceHandle: source
+      target: '1792338154909'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        iteration_id: null
+        loop_id: null
+        sourceType: knowledge-retrieval
+        targetType: llm
+      id: 17923386472190-source-1792338702318-target
+      source: '17923386472190'
+      sourceHandle: source
+      target: '1792338702318'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        iteration_id: null
+        loop_id: null
+        sourceType: llm
+        targetType: answer
+      id: 1792338702318--1792338931111-target
+      source: '1792338702318'
+      sourceHandle: source
+      target: '1792338931111'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        iteration_id: null
+        loop_id: null
+        sourceType: code
+        targetType: code
+      id: 1792385930069-source-1792333507677-target
+      source: '1792385930069'
+      sourceHandle: source
+      target: '1792333507677'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        iteration_id: null
+        loop_id: null
+        sourceType: code
+        targetType: llm
+      id: 1792402924590-source-1792337983383-target
+      source: '1792402924590'
+      sourceHandle: source
+      target: '1792337983383'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        iteration_id: null
+        loop_id: null
+        sourceType: llm
+        targetType: answer
+      id: llm-answer
+      source: llm
+      sourceHandle: source
+      target: answer
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        selected: false
+        title: 用户输入
+        type: start
+        variables: []
+      height: 73
+      id: '1792332495058'
+      position:
+        x: -422.1240890383403
+        y: 299.3299551946386
+      positionAbsolute:
+        x: -422.1240890383403
+        y: 299.3299551946386
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        instruction: "你负责从用户当前消息和最近的对话历史中提取考研专业课需求。\n【意图分类】\n1. single_query：\n用户要查询一所院校的专业课、科目代码、考试范围、参考书目、分数线或招生人数。\n\
+          2. compare：\n用户要比较两所院校的专业课、参考书目、考试范围、共同知识点或差异、分数线。\n3. study_plan：\n用户希望根据自己的基础、已学知识和可投入时间生成备考建议或学习顺序。\n\
+          4. unknown：\n无法确定属于前三类，或用户只是泛泛表示“想考研电子通信专业”。\n【年份提取强制规则】\n1. 用户输入中如果包含任何四位数年份（如\
+          \ 2024、2025、2026、2027），必须将其提取为 admission_year。\n2. 特别注意用户的习惯用语：\n   - \"\
+          2027年考什么\"、\"27考研\"、\"2027届\"、\"目标2027年入学\" 等，统统视为 admission_year = \"2027\"\
+          。\n3. 如果用户没有提及任何年份，admission_year 必须为空字符串 \"\"。\n4. 【示例】\n   用户输入：\"北理工的电子信息专业课2027年考什么？\"\
+          \n   正确提取：{\"school_a\": \"北理工\", \"major\": \"电子信息\", \"admission_year\"\
+          : \"2027\", \"intent\": \"single_query\"}\n【字段规则】\n- school_a：单校查询时为目标院校；比较时为第一所院校；备考建议时为目标院校。\n\
+          - school_b：只在两校比较时填写。\n- major：专业名称或专业代码。\n- admission_year：指拟入学年份（在考研初试的后一年）。例如用户说“2027考研”时（指2026年底考试，2027年入学），如果语义无法确定是初试年份还是入学年份，不要自行换算，应留空并追问。\n\
+          - baseline只能从以下四项选一个：\n  1. 尚未系统学过\n  2. 学过但遗忘较多\n  3. 基础比较熟悉\n  4. 已完成基础复习，想进阶拔高\n\
+          - known_topics 从以下选项选取，可多选：\n  信号与系统、电路原理、模拟电路、数字电路、通信原理、数字信号处理、电磁场与电磁波、其他或不确定。\n\
+          - 后一轮用户明确修改的信息优先于前一轮。\n- 可以利用对话历史补全前面已经明确提供的信息。\n- 不得猜测学校、年份、专业、基础或学习时间。\n\
+          - 缺失字段输出空字符串、空数组或空值。\n【院校简称处理】\n如果用户使用院校简称，应尽量识别对应标准名称。\n当前知识库支持的院校简称关系如下：\n\
+          - 武大 → 武汉大学\n- 北理工 → 北京理工大学\n- 大连理工 → 大连理工大学\n- 浙大→ 浙江大学\n- 其余院校别名按实际知识库补充\n\
+          如果无法确定简称对应哪所院校，不得自行猜测，应保留用户原始输入并要求用户确认。"
+        memory:
+          query_prompt_template: '{{#sys.query#}}
+
+
+            {{#sys.files#}}'
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: true
+            size: 6
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: qwen3.7-plus
+          provider: langgenius/openai_api_compatible/openai_api_compatible
+        parameters:
+        - description: single_query、compare、study_plan、unknown
+          name: intent
+          required: false
+          type: string
+        - description: 查询对象或第一所院校
+          name: school_a
+          required: false
+          type: string
+        - description: 第二所院校
+          name: school_b
+          required: false
+          type: string
+        - description: 专业或专业代码
+          name: major
+          required: false
+          type: string
+        - description: 拟入学年份（四位数）
+          name: admission_year
+          required: false
+          type: string
+        - description: 当前专业课基础
+          name: baseline
+          required: false
+          type: string
+        - description: 每天可投入小时数
+          name: daily_hours
+          required: false
+          type: number
+        - description: 已学知识点
+          name: known_topics
+          required: false
+          type: array[string]
+        - description: 用户当前问题
+          name: original_question
+          required: false
+          type: string
+        - description: 拟入学年份（第二个）
+          name: admission_year_b
+          required: false
+          type: string
+        - description: 零基础/什么都没学过
+          name: isZeroBase
+          required: false
+          type: boolean
+        query:
+        - sys
+        - query
+        reasoning_mode: function_call
+        selected: false
+        title: 提取用户需求
+        type: parameter-extractor
+        vision:
+          enabled: false
+      height: 88
+      id: '1792332548599'
+      position:
+        x: -143.01909568785737
+        y: 320.3299551946386
+      positionAbsolute:
+        x: -143.01909568785737
+        y: 320.3299551946386
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        code: "def main(\n    intent,\n    school_a_normalized,\n    school_b_normalized,\n\
+          \    major,\n    admission_year,\n    admission_year_b,\n    baseline,\n\
+          \    daily_hours,\n    known_topics,\n    isZeroBase  # <--- 新增的布尔值变量\n\
+          ):\n    def clean(value):\n        if value is None:\n            return\
+          \ \"\"\n        return str(value).strip()\n\n    intent = clean(intent)\n\
+          \    school_a = clean(school_a_normalized)\n    school_b = clean(school_b_normalized)\n\
+          \    major = clean(major)\n    admission_year = clean(admission_year)\n\
+          \    admission_year_b = clean(admission_year_b)\n    baseline = clean(baseline)\n\
+          \n    if not isinstance(known_topics, list):\n        known_topics = []\n\
+          \n    valid_intents = [\"single_query\", \"compare\", \"study_plan\"]\n\
+          \    valid_baselines = [\n        \"尚未系统学过\",\n        \"学过但遗忘较多\",\n  \
+          \      \"基础比较熟悉\",\n        \"已完成基础复习，想进阶拔高\"\n    ]\n    \n    valid_schools\
+          \ = [\n        \"北京理工大学\", \"大连理工大学\", \"武汉大学\", \"浙江大学\"\n    ]\n\n   \
+          \ # 1. 拦截：意图不支持\n    if intent not in valid_intents:\n        return {\n\
+          \            \"need_clarification\": True,\n            \"clarification_message\"\
+          : (\n                \"我目前只支持以下功能：①查询一所学校的专业课，\"\n                \"②比较两所学校的考试范围，或③根据自己的基础制定备考建议。\"\
+          \n                \"请同时告诉我目标院校、目标专业或方向，以及拟入学年份（如“2027”）。\"\n           \
+          \ ),\n            \"intent\": \"unknown\",\n            \"query_a\": \"\"\
+          , \"query_b\": \"\", \"known_topics_text\": \"\"\n        }\n\n    # 2.\
+          \ 拦截：院校不在白名单内\n    if school_a and school_a not in valid_schools:\n    \
+          \    return {\n            \"need_clarification\": True,\n            \"\
+          clarification_message\": f\"抱歉，我目前暂不支持 {school_a} 的数据查询。\",\n          \
+          \  \"intent\": \"unknown\",\n            \"query_a\": \"\", \"query_b\"\
+          : \"\", \"known_topics_text\": \"\"\n        }\n        \n    if intent\
+          \ == \"compare\" and school_b and school_b not in valid_schools:\n     \
+          \   return {\n            \"need_clarification\": True,\n            \"\
+          clarification_message\": f\"抱歉，对比功能暂不支持 {school_b}。\",\n            \"intent\"\
+          : \"unknown\",\n            \"query_a\": \"\", \"query_b\": \"\", \"known_topics_text\"\
+          : \"\"\n        }\n\n    # 3. 走正常的缺参数检查逻辑\n    year_valid = (\n        len(admission_year)\
+          \ == 4\n        and admission_year.isdigit()\n        and 2020 <= int(admission_year)\
+          \ <= 2100\n    )\n    \n    if intent == \"compare\" and not admission_year_b:\n\
+          \        admission_year_b = admission_year\n\n    year_b_valid = (\n   \
+          \     len(admission_year_b) == 4\n        and admission_year_b.isdigit()\n\
+          \        and 2020 <= int(admission_year_b) <= 2100\n    )\n\n    try:\n\
+          \        hours = float(daily_hours) if daily_hours is not None else 0\n\
+          \    except:\n        hours = 0\n\n    missing = []\n\n    if not school_a:\n\
+          \        missing.append(\"目标院校\")\n    if intent == \"compare\" and not\
+          \ school_b:\n        missing.append(\"第二所院校\")\n    if not major:\n    \
+          \    missing.append(\"目标专业或方向\")\n    if not year_valid:\n        missing.append(\"\
+          目标院校拟入学年份（四位数，例如2027）\")\n    if intent == \"compare\" and not year_b_valid:\n\
+          \        missing.append(\"第二所院校拟入学年份\")\n\n    if intent == \"study_plan\"\
+          :\n        if baseline not in valid_baselines:\n            missing.append(\"\
+          当前基础\")\n        if hours <= 0 or hours > 16:\n            missing.append(\"\
+          每天可投入时间（小时）\")\n            \n        # ==========================================\n\
+          \        # 核心：结合 isZeroBase 判断\n        # ==========================================\n\
+          \        # 如果用户是零基础，但代码抓到的列表为空，我们直接帮他填个\"无\"\n        if isZeroBase and\
+          \ len(known_topics) == 0:\n            known_topics = [\"无（零基础）\"]\n   \
+          \         \n        # 只有既不是零基础，列表又是空的，才去拦截\n        if not isZeroBase and\
+          \ len(known_topics) == 0:\n            missing.append(\"已经学过的知识点\")\n\n\
+          \    need_clarification = len(missing) > 0\n\n    if need_clarification:\n\
+          \        clarification = (\n            \"我已经理解你的大致需求，还需要补充：\"\n       \
+          \     + \"、\".join(missing)\n            + \"。你可以直接在下一条消息中补充，不必重新描述全部内容。\"\
+          \n        )\n    else:\n        clarification = \"\"\n\n    # ==========================================\n\
+          \    # 拼接检索语句\n    # ==========================================\n    query_a\
+          \ = (\n        f\"用户输入院校：{school_a}\\n\"\n        f\"标准院校名称：{school_a}\\\
+          n\"\n        f\"专业或方向：{major}\\n\"\n        f\"拟入学年份：{admission_year}\\\
+          n\"\n        \"查询专业课科目、考试范围、参考书目、分数线、招生人数及官方来源。\"\n    )\n\n    query_b\
+          \ = \"\"\n    if school_b:\n        query_b = (\n            f\"用户输入院校：{school_b}\\\
+          n\"\n            f\"标准院校名称：{school_b}\\n\"\n            f\"专业或方向：{major}\\\
+          n\"\n            f\"拟入学年份：{admission_year_b}\\n\"\n            \"查询专业课科目、考试范围、参考书目、分数线、招生人数及官方来源。\"\
+          \n        )\n\n    return {\n        \"need_clarification\": need_clarification,\n\
+          \        \"clarification_message\": clarification,\n        \"intent\":\
+          \ intent,\n        \"query_a\": query_a,\n        \"query_b\": query_b,\n\
+          \        \"known_topics_text\": \"、\".join(known_topics)\n    }"
+        code_language: python3
+        desc: 把参数提取器的各个输出连接为代码节点输入
+        outputs:
+          clarification_message:
+            children: null
+            type: string
+          intent:
+            children: null
+            type: string
+          known_topics_text:
+            children: null
+            type: string
+          need_clarification:
+            children: null
+            type: boolean
+          query_a:
+            children: null
+            type: string
+          query_b:
+            children: null
+            type: string
+        selected: false
+        title: 检查参数并生成检索语句
+        type: code
+        variables:
+        - value_selector:
+          - '1792332548599'
+          - intent
+          value_type: string
+          variable: intent
+        - value_selector:
+          - '1792385930069'
+          - school_a_normalized
+          value_type: string
+          variable: school_a_normalized
+        - value_selector:
+          - '1792385930069'
+          - school_b_normalized
+          value_type: string
+          variable: school_b_normalized
+        - value_selector:
+          - '1792332548599'
+          - major
+          value_type: string
+          variable: major
+        - value_selector:
+          - '1792332548599'
+          - admission_year
+          value_type: string
+          variable: admission_year
+        - value_selector:
+          - '1792332548599'
+          - baseline
+          value_type: string
+          variable: baseline
+        - value_selector:
+          - '1792332548599'
+          - daily_hours
+          value_type: number
+          variable: daily_hours
+        - value_selector:
+          - '1792332548599'
+          - known_topics
+          value_type: array[string]
+          variable: known_topics
+        - value_selector:
+          - '1792332548599'
+          - admission_year_b
+          value_type: string
+          variable: admission_year_b
+        - value_selector:
+          - '1792332548599'
+          - isZeroBase
+          value_type: boolean
+          variable: isZeroBase
+      height: 96
+      id: '1792333507677'
+      position:
+        x: 444.1598431210057
+        y: 320.3299551946386
+      positionAbsolute:
+        x: 444.1598431210057
+        y: 320.3299551946386
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: is
+            id: 3c997344-683a-4417-ba22-d8dc7b703a2a
+            value: true
+            varType: boolean
+            variable_selector:
+            - '1792333507677'
+            - need_clarification
+          logical_operator: and
+        desc: 是否缺少参数（信息）
+        selected: false
+        title: 条件分支
+        type: if-else
+      height: 176
+      id: '1792334472042'
+      position:
+        x: 745.5992961369778
+        y: 320.3299551946386
+      positionAbsolute:
+        x: 745.5992961369778
+        y: 320.3299551946386
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        answer: '{{#1792333507677.clarification_message#}}'
+        selected: false
+        title: 需要用户补充信息
+        type: answer
+        variables: []
+      height: 102
+      id: '1792334706674'
+      position:
+        x: 784.6822486723413
+        y: 178.67827352558362
+      positionAbsolute:
+        x: 784.6822486723413
+        y: 178.67827352558362
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: is
+            id: 2e4b3d81-7ecf-4dfb-823b-a7ed7d7184d1
+            value: single_query
+            varType: string
+            variable_selector:
+            - '1792333507677'
+            - intent
+          logical_operator: and
+        - case_id: 26fef4fb-d69c-4e29-aa7f-f0515f0b9842
+          conditions:
+          - comparison_operator: is
+            id: 5136c363-4356-48c6-9f78-6ebcac8e8478
+            value: compare
+            varType: string
+            variable_selector:
+            - '1792333507677'
+            - intent
+          logical_operator: and
+        - case_id: e69b8ba6-0a9b-4a5b-9577-36ee3908156e
+          conditions:
+          - comparison_operator: is
+            id: 20aa0e14-cf3a-4e48-9b90-5ea45d239ec2
+            value: study_plan
+            varType: string
+            variable_selector:
+            - '1792333507677'
+            - intent
+          logical_operator: and
+        selected: false
+        title: 条件分支 2
+        type: if-else
+      height: 292
+      id: '1792334795962'
+      position:
+        x: 1047.6822486723408
+        y: 278.28073585659274
+      positionAbsolute:
+        x: 1047.6822486723408
+        y: 278.28073585659274
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        answer: 抱歉，我没太理解您的具体需求。您是想查询学校信息、对比学校，还是需要复习规划呢？请换个说法再试试。
+        selected: false
+        title: 需求超出
+        type: answer
+        variables: []
+      height: 132
+      id: '1792335271064'
+      position:
+        x: 1024.265044757095
+        y: 682.553182584004
+      positionAbsolute:
+        x: 1024.265044757095
+        y: 682.553182584004
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        dataset_ids:
+        - 6e/iwOrdRdElROCsOY+vwsRb0++HbcpyNzKul2GISS0P2xBbtX0u3ZLhhANs1jH7
+        - wXUWQvycIE7YHBZe9hwhkQDcw4YaIl4pNtu3FYZXQIaDmLollE2CUjFRkDO1Ofqp
+        metadata_filtering_mode: disabled
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: reranking_model
+          reranking_model:
+            model: qwen3-rerank
+            provider: langgenius/tongyi/tongyi
+          score_threshold: 0.3
+          top_k: 5
+          weights:
+            keyword_setting:
+              keyword_weight: 0.3
+            vector_setting:
+              embedding_model_name: text-embedding-v3
+              embedding_provider_name: langgenius/tongyi/tongyi
+              vector_weight: 0.7
+            weight_type: customized
+        query_attachment_selector: []
+        query_variable_selector:
+        - '1792333507677'
+        - query_a
+        retrieval_mode: multiple
+        selected: false
+        title: 检索院校A
+        type: knowledge-retrieval
+      height: 52
+      id: '1792335689123'
+      position:
+        x: 1336.5853146506138
+        y: 115.19494496801576
+      positionAbsolute:
+        x: 1336.5853146506138
+        y: 115.19494496801576
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        dataset_ids:
+        - 6e/iwOrdRdElROCsOY+vwsRb0++HbcpyNzKul2GISS0P2xBbtX0u3ZLhhANs1jH7
+        - wXUWQvycIE7YHBZe9hwhkQDcw4YaIl4pNtu3FYZXQIaDmLollE2CUjFRkDO1Ofqp
+        desc: ''
+        isInIteration: false
+        isInLoop: false
+        metadata_filtering_mode: disabled
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: reranking_model
+          reranking_model:
+            model: qwen3-rerank
+            provider: langgenius/tongyi/tongyi
+          score_threshold: 0.3
+          top_k: 5
+          weights:
+            keyword_setting:
+              keyword_weight: 0.3
+            vector_setting:
+              embedding_model_name: text-embedding-v3
+              embedding_provider_name: langgenius/tongyi/tongyi
+              vector_weight: 0.7
+            weight_type: customized
+        query_attachment_selector: []
+        query_variable_selector:
+        - '1792333507677'
+        - query_a
+        retrieval_mode: multiple
+        selected: false
+        title: 对比：检索院校A
+        type: knowledge-retrieval
+      height: 52
+      id: '17923379251620'
+      position:
+        x: 1352.824694506227
+        y: 283.5716078347335
+      positionAbsolute:
+        x: 1352.824694506227
+        y: 283.5716078347335
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        dataset_ids:
+        - 6e/iwOrdRdElROCsOY+vwsRb0++HbcpyNzKul2GISS0P2xBbtX0u3ZLhhANs1jH7
+        - wXUWQvycIE7YHBZe9hwhkQDcw4YaIl4pNtu3FYZXQIaDmLollE2CUjFRkDO1Ofqp
+        desc: ''
+        isInIteration: false
+        isInLoop: false
+        metadata_filtering_mode: disabled
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: reranking_model
+          reranking_model:
+            model: qwen3-rerank
+            provider: langgenius/tongyi/tongyi
+          score_threshold: 0.3
+          top_k: 5
+          weights:
+            keyword_setting:
+              keyword_weight: 0.3
+            vector_setting:
+              embedding_model_name: text-embedding-v3
+              embedding_provider_name: langgenius/tongyi/tongyi
+              vector_weight: 0.7
+            weight_type: customized
+        query_attachment_selector: []
+        query_variable_selector:
+        - '1792333507677'
+        - query_b
+        retrieval_mode: multiple
+        selected: false
+        title: 对比：检索院校B
+        type: knowledge-retrieval
+      height: 52
+      id: '17923379505410'
+      position:
+        x: 1352.824694506227
+        y: 406.6112600472327
+      positionAbsolute:
+        x: 1352.824694506227
+        y: 406.6112600472327
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1792402924590'
+          - merged_context
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: qwen3.7-plus
+          provider: langgenius/openai_api_compatible/openai_api_compatible
+        model_selector: null
+        prompt_template:
+        - id: 4f6dce54-a690-4033-80d1-7b7164960699
+          role: system
+          text: '你是“电子通信考研专业课对比助手”。
+
+            请仔细阅读参考资料{{#context#}}}。资料中可能同时包含两所学校的信息。请严格区分出“院校A”和“院校B”的数据，并分别填入表格中。绝对不能把A校的数据填到B校里，如果某一项确实没有资料，再填“未检索到确切数据”。
+
+
+            【事实规则】
+
+            1. 所有院校事实必须来自对应院校的检索材料。
+
+            2. 分数线、招生人数、初试科目代码、参考书目没有明确证据时，必须写：“未检索到确切数据，建议查询官网。”
+
+            3. 不得用A校材料补充B校。
+
+            4. 不得把不同拟入学年份的材料混合。
+
+            5. 考试范围原文与AI语义归并必须分开。
+
+            6. “傅里叶分析”和“傅里叶变换”等可进行语义对齐，但必须标记为“AI语义归并”，不能声称两校官方表述完全一致。
+
+            7. 如果一方资料缺失，必须保留该缺失项，不能据另一方推测。
+
+            8. 每一项重要差异都要给出两边的来源。
+
+
+            【动态响应规则（最高优先级）】
+
+            你绝对不准输出无关信息！请先判断用户的意图：
+
+            - 如果用户明确询问“招生人数”、“分数线”等特定单一指标，请只用纯文本或简单表格输出该指标的数据，绝对不能输出“专业课名称”、“考试范围”、“参考书目”等其他无关内容！
+
+            - 只有当用户询问“对比专业课”或“详细对比”时，你才需要输出科目代码、考试范围和参考书目。
+
+
+            【输出格式】
+
+            ## 对比条件
+
+            - 院校A：{{#1792385930069.school_a_normalized#}}}
+
+            - 院校B：{{#1792385930069.school_b_normalized#}}}
+
+            - 专业或方向：{{#1792332548599.major#}}}
+
+            - 拟入学年份：{{#1792332548599.admission_year#}}}{{#1792332548599.admission_year_b#}}}
+
+
+            ## 对比结果
+
+            表格形式呈现，用户问什么你就答什么。用户没问的，你不要答。比如问“分数线”，就只输出分数线，不允许输出专业课、考试范围、参考书目。
+
+
+            ## 来源与缺失项
+
+            分别列出院校A、院校B的来源和缺失字段。'
+        - id: d17ed5ba-986d-4915-ae02-c91467b7dd5b
+          role: user
+          text: '请帮我对比以下两所院校：
+
+            目标院校A：{{#1792332548599.school_a#}}
+
+            目标院校B:{{#1792332548599.school_b#}}
+
+            目标专业：{{#1792332548599.major#}}
+
+            拟入学年份：{{#1792332548599.admission_year#}}
+
+            {{#1792332548599.admission_year_b#}}
+
+            院校A检索结果：{{#1792333507677.query_a#}}
+
+            院校B检索结果：{{#1792333507677.query_b#}}}'
+        selected: false
+        title: 生成两校对比
+        type: llm
+        vision:
+          enabled: false
+      height: 88
+      id: '1792337983383'
+      position:
+        x: 1877.3403424919825
+        y: 361.4514124559638
+      positionAbsolute:
+        x: 1877.3403424919825
+        y: 361.4514124559638
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        answer: '{{#1792337983383.text#}}'
+        selected: false
+        title: 直接回复 4
+        type: answer
+        variables: []
+      height: 102
+      id: '1792338154909'
+      position:
+        x: 2167.309479797169
+        y: 361.4514124559638
+      positionAbsolute:
+        x: 2167.309479797169
+        y: 361.4514124559638
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        dataset_ids:
+        - 6e/iwOrdRdElROCsOY+vwsRb0++HbcpyNzKul2GISS0P2xBbtX0u3ZLhhANs1jH7
+        - wXUWQvycIE7YHBZe9hwhkQDcw4YaIl4pNtu3FYZXQIaDmLollE2CUjFRkDO1Ofqp
+        desc: ''
+        isInIteration: false
+        isInLoop: false
+        metadata_filtering_mode: disabled
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: reranking_model
+          reranking_model:
+            model: qwen3-rerank
+            provider: langgenius/tongyi/tongyi
+          score_threshold: 0.3
+          top_k: 6
+          weights:
+            keyword_setting:
+              keyword_weight: 0.3
+            vector_setting:
+              embedding_model_name: text-embedding-v3
+              embedding_provider_name: langgenius/tongyi/tongyi
+              vector_weight: 0.7
+            weight_type: customized
+        query_attachment_selector: []
+        query_variable_selector:
+        - '1792333507677'
+        - query_a
+        retrieval_mode: multiple
+        selected: false
+        title: 检索目标院校考试范围
+        type: knowledge-retrieval
+      height: 52
+      id: '17923386472190'
+      position:
+        x: 1352.824694506227
+        y: 561.9855318467158
+      positionAbsolute:
+        x: 1352.824694506227
+        y: 561.9855318467158
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '17923386472190'
+          - result
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: qwen3.7-plus
+          provider: langgenius/openai_api_compatible/openai_api_compatible
+        model_selector: null
+        prompt_template:
+        - id: f12858d4-529d-4290-8875-d4547b66a3db
+          role: system
+          text: "你是“电子通信考研专业课备考规划助手”。\n你需要结合：\n1. 知识库中目标院校的真实考试范围{{#context#}}；\n\
+            2. 用户当前基础；\n3. 用户已经学过的知识点；\n4. 用户每天可投入时间；\n生成个性化备考建议。\n【事实与建议必须分离】\n-\
+            \ “考试科目、考试范围、科目代码、参考书目、分数线、招生人数”属于事实。\n- “优先级、学习顺序、时间分配、复习方法”属于建议或推断。\n\
+            - 事实只能来自知识库。\n- 建议必须明确标记为“备考建议”或“AI推断”。\n【防幻觉规则】\n1. 分数线、招生人数、初试科目代码、参考书目没有知识库证据时，必须写：\n\
+            \   “未检索到确切数据，建议查询官网。”\n2. 不得凭常识扩大目标院校考试范围。\n3. 可以推荐基础能力训练，但如果某知识点不在官方范围中，必须标记为“辅助基础”，不能称为必考内容。\n\
+            4. 如果目标院校考试范围本身未检索到，不得生成伪装成目标院校定制方案的内容。\n5. 用户说“学过”不等于已经掌握，应使用“已有接触”而不是直接判定“无需学习”。\n\
+            6. 不得因为缺少网址，就自行生成网址、文件名或来源标题。\n7. 不得把2025年历史数据描述为2026年数据。\n8. 引用来源使用知识库记录名称，不虚构外部链接。\n\
+            【时间规则】\n- 以用户填写的每日时间为上限。\n- 不假设用户每天都能完成满额任务。\n- 第一版只生成“未来4周启动计划”，不要虚构完整考研时间线。\n\
+            - 每周保留约10%时间用于复盘和机动调整。\n【输出格式】\n## 一、目标院校考试要求\n列出知识库检索到的考试科目和考试范围，并附来源。\n\
+            ## 二、用户当前基础\n- 当前基础：\n- 每日可投入时间：\n- 已学知识点：\n## 三、知识差距\n| 目标考试知识点 | 用户当前状态\
+            \ | 建议优先级 | 判断依据 |\n|---|---|---|---|\n|  | 已学/未提供/可能需复习 | 高/中/低 | 官方范围\
+            \ + 用户输入 |\n## 四、建议学习顺序\n按先修关系给出顺序，并解释为什么这样安排。\n## 五、未来4周启动计划\n| 周次 |\
+            \ 主要目标 | 每日时间建议 | 检验方式 |\n|---|---|---|---|\n| 第1周 |  |  |  |\n| 第2周 |\
+            \  |  |  |\n| 第3周 |  |  |  |\n| 第4周 |  |  |  |\n## 六、可复用的已有基础\n说明用户已经学过的内容如何帮助目标科目复习。\n\
+            ## 七、仍需人工核实的信息\n逐项列出未检索到、年份不确定或来源存在冲突的内容。\n最后明确说明：\n“以上学习顺序和时间分配属于基于官方考试范围与用户输入生成的备考建议，不是院校官方要求。”"
+        - id: 092bb010-c6fb-4667-b1df-334a901e4f24
+          role: user
+          text: '{{#1792385930069.school_a_normalized#}}}
+
+            {{#1792332548599.major#}}
+
+            {{#1792332548599.admission_year#}}
+
+            {{#1792332548599.baseline#}}
+
+            {{#1792332548599.daily_hours#}}
+
+            {{#1792332548599.known_topics#}}'
+        selected: false
+        title: 生成个性化备考建议
+        type: llm
+        vision:
+          enabled: false
+      height: 88
+      id: '1792338702318'
+      position:
+        x: 1674.5345250901887
+        y: 561.9855318467158
+      positionAbsolute:
+        x: 1674.5345250901887
+        y: 561.9855318467158
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        answer: '{{#1792338702318.text#}}}'
+        selected: false
+        title: 直接回复 5
+        type: answer
+        variables: []
+      height: 102
+      id: '1792338931111'
+      position:
+        x: 1953.4833052801898
+        y: 561.9855318467158
+      positionAbsolute:
+        x: 1953.4833052801898
+        y: 561.9855318467158
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        code: "def main(school_a, school_b):\n    alias_map = {\n        # 武汉大学\n\
+          \        \"武大\": \"武汉大学\",\n        \"武汉大学\": \"武汉大学\",\n        \"WHU\"\
+          : \"武汉大学\",\n\n        # 浙江大学\n        \"浙大\": \"浙江大学\",\n        \"浙江大学\"\
+          : \"浙江大学\",\n        \"ZJU\": \"浙江大学\",\n\n        # 北京理工大学\n        \"\
+          北理工\": \"北京理工大学\",\n        \"北理\": \"北京理工大学\",\n        \"北京理工大学\": \"\
+          北京理工大学\",\n        \"BIT\": \"北京理工大学\",\n\n        # 大连理工大学\n        \"\
+          大工\": \"大连理工大学\",\n        \"大连理工\": \"大连理工大学\",\n        \"大连理工大学\": \"\
+          大连理工大学\",\n        \"DUT\": \"大连理工大学\",\n    }\n\n    def normalize(name):\n\
+          \        if not name:\n            return \"\"\n\n        # 去除首尾空格，并转换为小写进行匹配\n\
+          \        text = str(name).strip()\n        lower_text = text.lower()\n\n\
+          \        # 优先匹配原样（处理大小写混合的英文缩写）\n        if text in alias_map:\n       \
+          \     return alias_map[text]\n\n        # 其次匹配小写\n        if lower_text\
+          \ in alias_map:\n            return alias_map[lower_text]\n\n        # 如果字典里完全没有（比如用户问了“哈工大”），原样返回，交给后面的白名单去拦截\n\
+          \        return text\n\n    return {\n        \"school_a_normalized\": normalize(school_a),\n\
+          \        \"school_b_normalized\": normalize(school_b)\n    }"
+        code_language: python3
+        outputs:
+          school_a_normalized:
+            children: null
+            type: string
+          school_b_normalized:
+            children: null
+            type: string
+        selected: false
+        title: 标准化院校全称
+        type: code
+        variables:
+        - value_selector:
+          - '1792332548599'
+          - school_a
+          value_type: string
+          variable: school_a
+        - value_selector:
+          - '1792332548599'
+          - school_b
+          value_type: string
+          variable: school_b
+      height: 52
+      id: '1792385930069'
+      position:
+        x: 144.15984312100568
+        y: 320.3299551946386
+      positionAbsolute:
+        x: 144.15984312100568
+        y: 320.3299551946386
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        code: "def main(knowledge_a: list, knowledge_b: list) -> dict:\n    combined\
+          \ = knowledge_a + knowledge_b\n    return {\n        \"merged_context\"\
+          : combined\n    }"
+        code_language: python3
+        outputs:
+          merged_context:
+            children: null
+            type: array[object]
+        selected: false
+        title: 合并检索结果
+        type: code
+        variables:
+        - value_selector:
+          - '17923379251620'
+          - result
+          value_type: array[object]
+          variable: knowledge_a
+        - value_selector:
+          - '17923379505410'
+          - result
+          value_type: array[object]
+          variable: knowledge_b
+      height: 52
+      id: '1792402924590'
+      position:
+        x: 1615.0745936942044
+        y: 361.4514124559638
+      positionAbsolute:
+        x: 1615.0745936942044
+        y: 361.4514124559638
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        answer: '{{#llm.text#}}
+
+          '
+        selected: false
+        title: 直接回复
+        type: answer
+        variables: []
+      height: 102
+      id: answer
+      position:
+        x: 1953.4833052801898
+        y: 115.19494496801576
+      positionAbsolute:
+        x: 1953.4833052801898
+        y: 115.19494496801576
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1792335689123'
+          - result
+        memory:
+          query_prompt_template: '{{#sys.query#}}
+
+            {{#sys.files#}}
+
+            {{#1792385930069.school_a_normalized#}}
+
+            {{#1792332548599.major#}}
+
+            {{#1792332548599.admission_year#}}'
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: false
+            size: 10
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: qwen3.7-plus
+          provider: langgenius/openai_api_compatible/openai_api_compatible
+        model_selector: null
+        prompt_template:
+        - id: 0a5f0e07-c6c9-4fcb-90d9-4c37b424ff4d
+          role: system
+          text: "你是“电子通信考研专业课信息助手”。\n\n你的任务是根据本次查询条件和知识库检索结果{{#context#}}，回答指定院校、专业和拟入学年份的专业课要求。\n\
+            \n【本次查询条件】\n\n院校：{{#1792385930069.school_a_normalized#}}}\n用户输入的专业或方向：{{#1792332548599.major#}}}\n\
+            拟入学年份：{{#1792332548599.admission_year#}}}\n用户原始问题：{{#sys.query#}}}\n\n\
+            【信息提取顺序】\n\n1. 先在知识库检索结果中寻找同时满足以下条件的记录：\n   - 院校匹配；\n   - 拟入学年份匹配；\n \
+            \  - 专业类别、具体专业、专业代码或用户常用称呼能够对应。\n2. 优先使用目标拟入学年份的记录。\n3. 同一院校的其他年份只能作为历史参考，不能替代目标年份。\n\
+            4. 对每个字段分别判断是否有数据，禁止因为某一个字段缺失就把所有字段都判定为缺失。\n5. 如果目标年份记录已经包含专业课名称、科目代码、考试范围或参考书目，必须输出这些已有内容。\n\
+            6. 分数线尚未公布，不影响输出已经明确记录的专业课信息。\n7.知识库中代码相同的专业课均为同一门综合专业课的两个模块\n【专业名称匹配规则】\n\
+            1. “电子信息”可能是专业类别或用户常用称呼。\n2. “新一代电子信息技术”可能是该类别下的具体专业。\n3. 如果知识库同时记录：\n\
+            \   - 专业类别：电子信息；\n   - 具体专业：新一代电子信息技术；\n   - 专业代码：085401；\n   则视为匹配。\n\
+            4. 回答时应同时说明专业类别、具体专业名称和专业代码。\n5. 只有院校、年份或专业确实无法对应时，才判定为不匹配。\n\n【防幻觉规则】\n\
+            1. 只能使用知识库检索结果中明确出现的信息。\n2. 不得利用模型记忆补充分数、人数、科目代码、书名、版本或考试范围。\n3. 不要求知识库必须具有外部网址；知识库正文中明确记录的字段可以作为本次MVP的回答依据。\n\
+            4. 不得自行生成来源网址、来源标题或文件名称。\n5. 每个字段单独判断：\n   - 有明确记录：准确输出；\n   - 没有明确记录：输出“未检索到确切数据，建议查询官网。”\n\
+            6. 不得把上一年度的信息当成目标年度信息。\n7. 不得把专业类别和具体专业名称简单判定为冲突。\n8. 不得因为分数线缺失而拒绝输出专业课名称、代码、范围和参考书目。\n\
+            9. 如果同一科目代码下包含多个考试模块，应按知识库结构列出；不得自行判断是二选一还是两门独立考试。\n10. 不得输出知识库中没有出现的数字。\n\
+            \n【输出格式】\n## 专业课信息\n只有当用户明确询问“专业课名称、科目代码、考试范围、参考书目”时，才输出本部分；否则省略\n| 字段\
+            \ | 检索结果 |\n|---|---|\n| 专业课名称或考试模块 |  |\n| 初试科目代码 |  |\n| 考试范围 |  |\n\
+            | 参考书目 |  |\n\n## 附加招生信息\n只有用户明确询问招生信息（分数线、招生人数等）时才输出本部分；否则省略。\n## 如果用户只问了分数线，请只回答分数线相关内容，绝对不要输出专业课表格！\
+            \ \n## 如果分数线暂无数据，直接回答“2027年分数线暂未公布”，不需要列出其他无关信息。\n## 尚未确认的信息\n只列出知识库中真正缺失、存在冲突或含义不明确的信息。\n\
+            \n如果知识库缺少外部来源链接，可以说明：\n“以上信息来自本系统收录的官方材料整理记录，但原始访问链接未保留，目前无法提供在线核验链接。”"
+        selected: false
+        title: 生成单校查询结果
+        type: llm
+        vision:
+          enabled: false
+      height: 88
+      id: llm
+      position:
+        x: 1642.311269509144
+        y: 115.19494496801576
+      positionAbsolute:
+        x: 1642.311269509144
+        y: 115.19494496801576
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    viewport:
+      x: -114.58115125433153
+      y: 124.11509718924603
+      zoom: 0.47234628888700375
+  rag_pipeline_variables: []
