@@ -37,6 +37,7 @@ const SUGGESTIONS = [
 const DEFAULT_PLACEHOLDER = '输入你的通信考研问题…';
 const GUIDED_PLACEHOLDER =
   '请输入：你想查询的学校、拟入学年份、专业、招生人数、分数线等，以及你的备考基础、可投入的备考时长';
+const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/$/, '');
 
 function BrandMark({ small = false }) {
   return (
@@ -231,7 +232,7 @@ export default function App() {
     abortRef.current = controller;
 
     try {
-      const response = await fetch('/api/chat', {
+      const response = await fetch(`${API_BASE_URL}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query, conversation_id: conversationId }),

@@ -10,8 +10,8 @@
 - [演示视频脚本](docs/demo-script.md)
 - [60–90 秒演示视频（飞书妙记）](https://my.feishu.cn/minutes/obcn4f1j6821q75mlrpki7s5?from=from_copylink)
 - 在线 Demo：按需开放，部署完成后补充
-- Netlify 部署配置：仓库根目录的 `netlify.toml`；前端仍请求 `/api/chat`，由重写规则转发到 Netlify Function。
-- Netlify Function 会直接转发 Dify 的流式响应；本地开发、Netlify 和 Vercel 版本均保留流式显示。
+- 在线 Demo 部署方案：Netlify 托管前端，Render Web Service 托管 Dify API 代理。Netlify 前端通过构建变量 `VITE_API_BASE_URL` 请求 Render 的 `/api/chat`。
+- Render 服务启动命令为 `npm start`，需要配置 `DIFY_API_KEY` 和 `FRONTEND_ORIGIN`；健康检查地址为 `/health`。
 
 ## 产品定位
 
@@ -144,7 +144,7 @@ npm install
 DIFY_API_KEY=app-your-dify-api-key
 ```
 
-密钥只由本地开发代理或 Vercel Serverless Function 读取。不要使用 `VITE_` 前缀，也不要把 `.env.local` 提交到 Git。
+密钥只由本地开发代理、Render Web Service 或 Vercel Serverless Function 读取。不要给 `DIFY_API_KEY` 使用 `VITE_` 前缀，也不要把 `.env.local` 提交到 Git。
 
 ### 3. 导入 Dify Workflow
 
@@ -224,7 +224,8 @@ Agent 效果评测尚未用统一测试集重新跑完，因此当前不声明�
 
 ```text
 .
-├─ api/                    # Vercel Serverless Function
+├─ api/                    # Vercel/Netlify Serverless Function
+├─ render-server.mjs       # Render Web Service API 代理
 ├─ server/                 # Dify Streaming API 代理
 ├─ src/                    # React 前端
 ├─ tests/                  # Node 自动化测试
